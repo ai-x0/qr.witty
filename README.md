@@ -91,7 +91,7 @@ class Component extends React.Component {
 
 #### Alipay
 
-<img align="center" src="https://blog.ciaochaos.com/projects/qrcode/alipay2.jpeg" width="250">
+<img align="center" src="https://qr.witty-ai.io/static/media/img_banner_qr.60b3a7cd.png" width="300">
 
 ## Dependency
 
