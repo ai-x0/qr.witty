@@ -4,6 +4,12 @@ import {getTypeTable, QRPointType} from "../../utils/qrcodeHandler";
 import {createRenderer} from "../style/Renderer";
 import {rand} from "../../utils/util";
 
+import i18next from "i18next";
+
+function tp(key) {
+    return i18next.t(`page.${key}`)
+}
+
 function listPoints({ qrcode, params, icon }) {
     if (!qrcode) return []
 
@@ -119,12 +125,12 @@ function getParamInfo() {
     return [
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '圆圈颜色',
+            key: tp('CircleColor'), //'圆圈颜色',
             default: '#8ED1FC'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key: tp('MarkerColor'), //'定位点颜色',
             default: '#0693E3'
         }
     ]

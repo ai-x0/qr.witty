@@ -3,6 +3,11 @@ import {ParamTypes} from "../../constant/ParamTypes";
 import {getTypeTable, QRPointType} from "../../utils/qrcodeHandler";
 import {createRenderer} from "../style/Renderer";
 import {defaultImage} from "../../constant/References";
+import i18next from "i18next";
+
+function tp(key) {
+    return i18next.t(`page.${key}`)
+}
 
 function listPoints({ qrcode, params, icon }) {
     if (!qrcode) return []
@@ -101,51 +106,53 @@ function getParamInfo() {
     return [
         {
             type: ParamTypes.UPLOAD_BUTTON,
-            key: '背景图片',
+            key: tp('bg'), // '背景图片',
             default: defaultImage,
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '信息点样式',
+            key: i18next.t('page.PatternStyle'),// '信息点样式',
             default: 0,
             choices: [
-                "矩形",
-                "圆形",
+                tp('Square'),
+                tp('Circle'),
             ]
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点缩放',
+            key: tp('PatternScaling'), // '信息点缩放',
+            placeholder: '0-120',
             default: 100
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点不透明度',
+            key: tp('PatternTransparency'), //'信息点不透明度',
+            placeholder: '0-100',
             default: 100,
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点深色',
+            key:  tp('DarkColor'), //'信息点深色',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点浅色',
+            key: tp('LightColor'), //'信息点浅色',
             default: '#FFFFFF'
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '定位点样式',
+            key: tp('MarkerStyle'), // '定位点样式',
             default: 0,
             choices: [
-                "矩形",
-                "圆形",
-                "行星",
+                tp('Square'),
+                tp('Circle'),
+                tp('Planet'),
             ]
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key: tp('MarkerColor'), // '定位点颜色',
             default: '#000000'
         },
     ];

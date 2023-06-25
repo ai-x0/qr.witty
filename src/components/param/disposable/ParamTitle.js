@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import '../../Qrcode.css';
+import { Select } from 'antd';
 import FrameworkParam from "../FrameworkParam";
 import {getExactValue} from "../../../utils/util";
 import ParamTitleColorViewer from "../../../containers/param/disposable/ParamTitleColorViewer";
@@ -30,13 +31,13 @@ const TitleParams = ({ title, onChange }) => {
                     />
                 </FrameworkParam>
                 <FrameworkParam paramName={"标题对齐"}>
-                    <select
+                    <Select
                         className="Qr-select"
                         value={title.align}
-                        onChange={(e) => onChange({...title, align: e.target.value})}>
-                        <option value={"middle"}>中间</option>
-                        <option value={"bottom"}>底部</option>
-                    </select>
+                        onChange={(e) => onChange({...title, align: e})}>
+                        <Select.Option value={"middle"}>中间</Select.Option>
+                        <Select.Option value={"bottom"}>底部</Select.Option>
+                    </Select>
                 </FrameworkParam>
             </React.Fragment>
         )
@@ -50,7 +51,7 @@ const ParamTitle = ({title, onChange}) => (
             <select
                 className="Qr-select"
                 value={title.enabled}
-                onChange={(e) => onChange({...title, enabled: e.target.value})}>
+                onChange={(e) => onChange({...title, enabled: e})}>
                 <option value={0}>否</option>
                 <option value={1}>是</option>
             </select>

@@ -2,6 +2,12 @@ import React  from "react";
 import {ParamTypes} from "../../constant/ParamTypes";
 import {getTypeTable, QRPointType} from "../../utils/qrcodeHandler";
 import {createRenderer} from "../style/Renderer";
+import i18next from "i18next";
+
+function tp(key) {
+    return i18next.t(`page.${key}`)
+}
+
 
 function listPoints({ qrcode, params, icon }) {
     if (!qrcode) return []
@@ -116,16 +122,16 @@ function getParamInfoFuncA() {
     return [
         {
             type: ParamTypes.SELECTOR,
-            key: '信息点样式',
+            key: i18next.t('page.PatternStyle'),// '信息点样式',
             default: 1,
             choices: [
-                "矩形",
-                "圆形",
+                tp("Square"),
+                tp("Circle"),
             ]
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '干扰函数',
+            key: tp('Noise'), //'干扰函数',
             default: 0,
             choices: [
                 "A",
@@ -134,33 +140,33 @@ function getParamInfoFuncA() {
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点不透明度',
+            key: tp("PatternTransparency"),
             default: 100,
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '定位点样式',
+            key: tp("MarkerStyle"),
             default: 1,
             choices: [
-                "矩形",
-                "圆形",
-                "行星",
-                "圆角矩形",
+                tp("Square"),
+                tp("Circle"),
+                tp("Planet"),
+                tp("RoundRectangle"),
             ]
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点颜色 1',
+            key:  tp('PatternColor') + ' 1',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点颜色 2',
+            key:  tp('PatternColor') + ' 2',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key: tp('MarkerColor'), // '定位点颜色',
             default: '#000000'
         }
     ];
@@ -170,16 +176,16 @@ function getParamInfoFuncB() {
     return [
         {
             type: ParamTypes.SELECTOR,
-            key: '信息点样式',
+            key: i18next.t('page.PatternStyle'),// '信息点样式',
             default: 1,
             choices: [
-                "矩形",
-                "圆形",
+                tp("Square"),
+                tp("Circle"),
             ]
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '干扰函数',
+            key: tp('Noise'), //'干扰函数',
             default: 1,
             choices: [
                 "A",
@@ -188,33 +194,33 @@ function getParamInfoFuncB() {
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点不透明度',
+            key: tp("PatternTransparency"),
             default: 100,
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '定位点样式',
+            key: tp("MarkerStyle"),
             default: 1,
             choices: [
-                "矩形",
-                "圆形",
-                "行星",
-                "圆角矩形",
+                tp("Square"),
+                tp("Circle"),
+                tp("Planet"),
+                tp("RoundRectangle"),
             ]
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点颜色 1',
+            key:  tp('PatternColor') +' 1',
             default: '#ABB8C3'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点颜色 2',
+            key: tp('PatternColor') +' 2',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key: tp('MarkerColor'),
             default: '#000000'
         }
     ];

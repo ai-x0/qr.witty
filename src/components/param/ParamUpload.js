@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import i18next from 'i18next';
 import '../Qrcode.css';
 
 const ParamUpload = ({ rendererIndex, paramIndex, onChange }) => (
@@ -7,10 +8,10 @@ const ParamUpload = ({ rendererIndex, paramIndex, onChange }) => (
         <label
             htmlFor="image_upload"
             key={"label_" + rendererIndex + "_" + paramIndex}
-            className="dl-btn ul-btn"
+            className="dl-btn ul-btn image_upload"
             style={{textAlign: "center"}}
         >
-            上传图片
+            {i18next.t('page.Upload')}
         </label>
         <input
             type="file"

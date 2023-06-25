@@ -1,0 +1,38 @@
+.Qrbox.Qr-Centered {
+  position: relative;
+  max-width: 1200px;
+  .Qr-subtitle {
+    margin-top: 15px;
+  }
+
+  .title-right {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .togglebox {
+    // position: absolute;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    
+
+    &.expand {
+      img {
+        transform: rotate(0deg);
+      }
+    }
+    img {
+      transform-origin: center center;
+      margin-left: 2px;
+      width: 14px;
+      transition: transform 0.3s;
+      transform: rotate(-90deg);
+    }
+  }
+}

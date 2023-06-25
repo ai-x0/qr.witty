@@ -1,18 +1,21 @@
-import {connect} from 'react-redux';
-import {genQRInfo} from "../../actions";
-import React, {useRef} from "react";
-import {isPicture} from "../../utils/imageUtils";
-import {decodeData} from "../../utils/qrcodeHandler";
+import { connect } from "react-redux";
+import { genQRInfo } from "../../actions";
+import React, { useRef } from "react";
+import { isPicture } from "../../utils/imageUtils";
+import { decodeData } from "../../utils/qrcodeHandler";
 import { handleUpload, handleInputUrl } from "../../utils/gaHelper";
+import { useTranslation } from "react-i18next";
+import { Input } from "antd";
+import "./text.scss";
 
-const InputText = ({dispatch}) => {
-    const textRef = useRef();
-
-    return (
-        <React.Fragment>
-            <div className="Qr-input-upload-div">
-                <div className="Qr-input-upload">
-                    <label
+const InputText = ({ dispatch, textUrl }) => {
+  const textRef = useRef();
+  const { t } = useTranslation();
+  return (
+    <React.Fragment>
+      {/* <div className="Qr-input-upload-div">
+        <div className="Qr-input-upload">
+          <label
                         htmlFor="image_scanner"
                         className="Qr-upload"
                         style={{textAlign: "center"}}
@@ -49,31 +52,47 @@ const InputText = ({dispatch}) => {
                             }
                         }}
                     />
-                    <input
-                        className="Qr-input big-input"
-                        placeholder="https://qrbtf.com"
-                        ref={textRef}
-                        onBlur={(e) => {
-                            handleInputUrl();
-                            dispatch(genQRInfo(e.target.value))
-                        }}
-                        onKeyPress={(e) => {
-                            if (e.key === 'Enter') {
-                                dispatch(genQRInfo(e.target.value));
-                                handleInputUrl();
-                                e.target.blur();
-                            }
-                        }}
-                    />
-                </div>
-                <div className="Qr-input-hint">
-                    上传普通二维码或输入网址
-                </div>
-                <a className="Qr-new-discord" href="https://discord.gg/V9CNuqYfte" target='_blank'>
-                    New! Click to join our Discord，AI QR code coming soon!
-                </a>
-            </div>
-        </React.Fragment>);
-}
+          <input
+            className="txt-qrinput"
+            placeholder="For everything,link,text,phone"
+            ref={textRef}
+            onBlur={(e) => {
+              handleInputUrl();
+              dispatch(genQRInfo(e.target.value));
+            }}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                dispatch(genQRInfo(e.target.value));
+                handleInputUrl();
+                e.target.blur();
+              }
+            }}
+          />
+        </div>
+        <div className="Qr-input-hint">上传普通二维码或输入网址</div>
+      </div> */}
 
-export default connect()(InputText);
+      <Input
+        className="txt-qrinput"
+        placeholder={t("page.useFor")}
+        ref={textRef}
+        allowClear
+        defaultValue={textUrl}
+        onBlur={(e) => {
+          handleInputUrl();
+          dispatch(genQRInfo(e.target.value));
+        }}
+        onPressEnter={(e) => {
+          dispatch(genQRInfo(e.target.value));
+          handleInputUrl();
+          e.target.blur();
+        }}
+      />
+    </React.Fragment>
+  );
+};
+
+const mapStateToProps = (state) => ({
+  textUrl: state.textUrl,
+});
+export default connect(mapStateToProps)(InputText);

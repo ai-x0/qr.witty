@@ -4,6 +4,11 @@ import {getTypeTable, QRPointType} from "../../utils/qrcodeHandler";
 import {createRenderer, defaultDrawIcon} from "../style/Renderer";
 import {getExactValue, rand} from "../../utils/util";
 import LinkTrace from "../link/LinkTrace";
+import i18next from "i18next";
+
+function tp(key) {
+    return i18next.t(`page.${key}`)
+}
 
 function listPoints({ qrcode, params, icon }) {
     if (!qrcode) return []
@@ -95,43 +100,45 @@ function getParamInfoRect() {
     return [
         {
             type: ParamTypes.SELECTOR,
-            key: '信息点样式',
+            key:  tp('PatternStyle'),// '信息点样式',
             default: 0,
             choices: [
-                "矩形",
-                "圆形",
-                "随机"
+                tp('Square'),
+                tp('Circle'),
+                tp('Random'),
             ]
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点缩放',
+            key: tp('PatternScaling'), //'信息点缩放',
+            placeholder: '0-120',
             default: 100
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点不透明度',
+            key: tp('PatternTransparency'), // '信息点不透明度',
+            placeholder: '0-100',
             default: 100,
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '定位点样式',
-            default: 0,
+            key: tp('MarkerStyle'), //'定位点样式',
+            default: 3,
             choices: [
-                "矩形",
-                "圆形",
-                "行星",
-                "圆角矩形",
+                tp('Square'),
+                tp('Circle'),
+                tp('Planet'),
+                tp('RoundRectangle'),
             ]
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点颜色',
+            key: tp('PatternColor'), //'信息点颜色',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key: tp('MarkerColor'), //'定位点颜色',
             default: '#000000'
         }
     ];
@@ -141,43 +148,45 @@ function getParamInfoRound() {
     return [
         {
             type: ParamTypes.SELECTOR,
-            key: '信息点样式',
+            key: i18next.t('page.PatternStyle'),// '信息点样式',
             default: 1,
             choices: [
-                "矩形",
-                "圆形",
-                "随机"
+                tp('Square'),
+                tp('Circle'),
+                tp('Random'),
             ]
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点缩放',
+            key:  tp('PatternScaling'), //'信息点缩放',
+            placeholder: '0-120',
             default: 50
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点不透明度',
+            key:  tp('PatternTransparency'), //'信息点不透明度',
+            placeholder: '0-100',
             default: 30,
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '定位点样式',
+            key: tp('MarkerStyle'), //'定位点样式',
             default: 1,
             choices: [
-                "矩形",
-                "圆形",
-                "行星",
-                "圆角矩形",
+                tp('Square'),
+                tp('Circle'),
+                tp('Planet'),
+                tp('RoundRectangle'),
             ]
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点颜色',
+            key: tp('PatternColor'), //'信息点颜色',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key: tp('MarkerColor'), //'定位点颜色',
             default: '#000000'
         }
     ];
@@ -187,43 +196,45 @@ function getParamInfoRandRound() {
     return [
         {
             type: ParamTypes.SELECTOR,
-            key: '信息点样式',
+            key: i18next.t('page.PatternStyle'),// '信息点样式',
             default: 2,
             choices: [
-                "矩形",
-                "圆形",
-                "随机"
+                tp('Square'),
+                tp('Circle'),
+                tp('Random'),
             ]
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点缩放',
+            key: tp('PatternScaling'), //'信息点缩放',
+            placeholder: '0-120',
             default: 80
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '信息点不透明度',
+            key: tp('PatternTransparency'), //'信息点不透明度',
+            placeholder: '0-100',
             default: 100,
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '定位点样式',
+            key:  tp('MarkerStyle'), // '定位点样式',
             default: 2,
             choices: [
-                "矩形",
-                "圆形",
-                "行星",
-                "圆角矩形",
+                tp('Square'),
+                tp('Circle'),
+                tp('Planet'),
+                tp('RoundRectangle'),
             ]
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '信息点颜色',
+            key: tp('PatternColor'), //'信息点颜色',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key: tp('MarkerColor'), //'定位点颜色',
             default: '#000000'
         }
     ];

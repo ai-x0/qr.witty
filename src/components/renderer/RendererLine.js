@@ -4,6 +4,12 @@ import {getTypeTable, QRPointType} from "../../utils/qrcodeHandler";
 import {createRenderer} from "../style/Renderer";
 import {rand} from "../../utils/util";
 
+import i18next from "i18next";
+
+function tp(key) {
+    return i18next.t(`page.${key}`)
+}
+
 function listPoints({ qrcode, params, icon }) {
     if (!qrcode) return []
 
@@ -304,47 +310,49 @@ function getParamInfoLine() {
     return [
         {
             type: ParamTypes.SELECTOR,
-            key: '连线方向',
+            key: tp('LineDirection'), //'连线方向',
             default: 2,
             choices: [
-                "左右",
-                "上下",
-                "纵横",
-                "回环",
-                "左上 — 右下",
-                "右上 — 左下",
-                "交叉"
+                tp('LeftRight'),
+                tp('UpDown'),
+                tp('VerticalHorizontal'),
+                tp('Loopback'),
+                tp('UpperleftTolowerright'),
+                tp('UpperrightTolowerleft'),
+                tp('Crossover'),
             ]
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '连线粗细',
+            key: tp('lineWidth'), //'连线粗细',
+            placeholder: '0-120',
             default: 50
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '连线不透明度',
+            key:  tp('lineOpacity'), //'连线不透明度',
+            placeholder:'0-100',
             default: 100,
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '定位点样式',
+            key: tp('MarkerStyle'), //'定位点样式',
             default: 3,
             choices: [
-                "矩形",
-                "圆形",
-                "行星",
-                "圆角矩形",
+                tp('Square'),
+                tp('Circle'),
+                tp('Planet'),
+                tp('RoundRectangle'),
             ]
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '连线颜色',
+            key: tp('lineColor'), //'连线颜色',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key:  tp('MarkerColor'), //'定位点颜色',
             default: '#000000'
         }
     ];
@@ -354,47 +362,49 @@ function getParamInfoLine2() {
     return [
         {
             type: ParamTypes.SELECTOR,
-            key: '连线方向',
+            key: tp('LineDirection'), //'连线方向',
             default: 6,
             choices: [
-                "左右",
-                "上下",
-                "纵横",
-                "回环",
-                "左上 — 右下",
-                "右上 — 左下",
-                "交叉"
+                tp('LeftRight'),
+                tp('UpDown'),
+                tp('VerticalHorizontal'),
+                tp('Loopback'),
+                tp('UpperleftTolowerright'),
+                tp('UpperrightTolowerleft'),
+                tp('Crossover'),
             ]
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '连线粗细',
+            key: tp('lineWidth'), //'连线粗细',
+            placeholder: '0-120',
             default: 50
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '连线不透明度',
+            key: tp('lineOpacity'), //'连线不透明度',
+            placeholder:'0-100',
             default: 100,
         },
         {
             type: ParamTypes.SELECTOR,
-            key: '定位点样式',
+            key: tp('MarkerStyle'), //'定位点样式',
             default: 0,
             choices: [
-                "矩形",
-                "圆形",
-                "行星",
-                "圆角矩形",
+                tp('Square'),
+                tp('Circle'),
+                tp('Planet'),
+                tp('RoundRectangle'),
             ]
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '连线颜色',
+            key:  tp('lineWidth'), //'连线颜色',
             default: '#000000'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '定位点颜色',
+            key: tp('MarkerColor'), //'定位点颜色',
             default: '#000000'
         }
     ];

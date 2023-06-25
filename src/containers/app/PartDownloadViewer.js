@@ -45,13 +45,26 @@ const mapStateToProps = (state, ownProps) => ({
         saveDB(state, 'svg', ownProps.updateDownloadData);
         handleDownloadSvg(state.value);
     },
+    onGenerateImage: (type) => {
+        return new Promise(resolve => {
+            saveImg(state.value, outerHtml(state.selectedIndex), 1500, 1500, type, 'onlyCreate').then((res) => {
+                console.log('state.value', state.value)
+                resolve(res)
+            });
+        });
+    },
     onImgDownload: (type) => {
         return new Promise(resolve => {
             saveImg(state.value, outerHtml(state.selectedIndex), 1500, 1500, type).then((res) => {
-                saveDB(state, type, ownProps.updateDownloadData).then(() => {
-                    handleDownloadImg(state.value, type);
-                    resolve(res)
-                });
+                // 移除保存数据的接口
+                // saveDB(state, type, ownProps.updateDownloadData).then(() => {
+                //     handleDownloadImg(state.value, type);
+                //     resolve(res)
+                // });
+                console.log('state.value', state.value)
+
+                handleDownloadImg(state.value, type);
+                resolve(res)
             });
         });
     }

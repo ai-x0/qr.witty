@@ -2,6 +2,11 @@ import React  from "react";
 import {ParamTypes} from "../../constant/ParamTypes";
 import {createRenderer} from "../style/Renderer";
 import {defaultImage} from "../../constant/References";
+import i18next from "i18next";
+
+function tp(key) {
+    return i18next.t(`page.${key}`)
+}
 
 function listPoints({ qrcode, params, icon }) {
     if (!qrcode) return []
@@ -31,17 +36,18 @@ function getParamInfo() {
     return [
         {
             type: ParamTypes.UPLOAD_BUTTON,
-            key: '背景图片',
+            key: tp('bg'), //'背景图片',
             default: defaultImage,
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '覆盖颜色',
+            key: tp('OverlayColor'), //'覆盖颜色',
             default: '#000000'
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '覆盖不透明度',
+            key: tp('OverlayOpacity'), //'覆盖不透明度',
+            placeholder: '0-100',
             default: 10,
         },
     ];

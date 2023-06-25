@@ -1,0 +1,99 @@
+.langBox {
+  .lang-select {
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: none;
+    border-radius: 18px;
+
+    .ant-select-selector {
+      padding: 0 18px;
+      border: none;
+      border-radius: 18px;
+      background-color: none;
+      height: 45px;
+      border: 1px solid rgba(64, 62, 78, 1);
+
+      .ant-select-selection-search {
+        height: 45px;
+      }
+    }
+
+    .ant-select-arrow {
+      svg {
+        path {
+          fill: rgba(64, 62, 78, 1);
+        }
+      }
+    }
+
+    .ant-select-selection-item {
+      height: 45px;
+      line-height: 45px;
+
+      font-family: SF UI Text;
+      color: #403e4e;
+      font-size: 18px;
+    }
+  }
+}
+
+.ant-select-item {
+  height: 45px;
+  margin-bottom: 2px;
+  .ant-select-item-option-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+
+  .ant-select-item {
+    height: 24px;
+  }
+
+  .langBox {
+    .lang-select {
+      width: 100px !important;
+      height: 30px;
+      border: none;
+      background: none;
+      border-radius: 15px;
+  
+      .ant-select-selector {
+        padding: 0 8px;
+        border: none;
+        border-radius: 15px;
+        background-color: none;
+        height: 30px;
+        border: 1px solid rgba(64, 62, 78, 1);
+  
+        .ant-select-selection-search {
+          height: 30px;
+        }
+      }
+  
+      .ant-select-arrow {
+        svg {
+          path {
+            fill: rgba(64, 62, 78, 1);
+          }
+        }
+      }
+  
+      .ant-select-selection-item {
+        height: 30px;
+        line-height: 30px;
+  
+        font-family: SF UI Text;
+        color: #403e4e;
+        font-size: 14px;
+      }
+    }
+  }
+
+
+}

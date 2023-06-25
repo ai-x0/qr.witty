@@ -1,0 +1,23 @@
+.txt-qrinput {
+  width: 780px;
+  box-sizing: border-box;
+  height: 54px;
+
+  background: #f1f3f7;
+  border-radius: 18px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  margin-bottom: 44px;
+  margin-top: 20px;
+  &::placeholder {
+    color: #9d9ca1;
+  }
+
+  input {
+    background: none;
+    font-size: 16px;
+  }
+}

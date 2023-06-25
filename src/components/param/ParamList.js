@@ -16,18 +16,21 @@ const mapTypeToComponent = ({
     [ParamTypes.UPLOAD_BUTTON]: ParamUploadViewer,
 })
 
-const ParamList = ({ rendererIndex, paramInfo }) => (
-    paramInfo.map((item, paramIndex) => {
-        return (
-            <FrameworkParam key={"tr_" + rendererIndex + "_" + paramIndex} paramName={item.key}>
-                {React.createElement(mapTypeToComponent[item.type], {
-                    rendererIndex: rendererIndex,
-                    paramIndex: paramIndex
-                })}
-            </FrameworkParam>
-        );
-    })
-)
+const ParamList = ({ rendererIndex, paramInfo }) => {
+    return (
+
+        paramInfo.map((item, paramIndex) => {
+            return (
+                <FrameworkParam key={"tr_" + rendererIndex + "_" + paramIndex} paramName={item.key}>
+                    {React.createElement(mapTypeToComponent[item.type], {
+                        rendererIndex: rendererIndex,
+                        paramIndex: paramIndex
+                    })}
+                </FrameworkParam>
+            );
+        })
+    )
+}
 
 ParamList.propTypes = {
     rendererIndex: PropTypes.number.isRequired,

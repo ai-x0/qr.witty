@@ -4,6 +4,13 @@ import {getTypeTable, QRPointType} from "../../utils/qrcodeHandler";
 import {createRenderer} from "../style/Renderer";
 import {getExactValue, getIdNum} from "../../utils/util";
 
+import i18next from "i18next";
+
+function tp(key) {
+    return i18next.t(`page.${key}`)
+}
+
+
 const X = [ Math.sqrt(3)/2, 1/2];
 const Y = [-Math.sqrt(3)/2, 1/2];
 const Z = [0, 0];
@@ -52,27 +59,27 @@ function getParamInfo() {
     return [
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '柱体高度',
+            key: tp('MarkerHeight'), // '柱体高度',
             default: 0.5,
         },
         {
             type: ParamTypes.TEXT_EDITOR,
-            key: '定位点柱体高度',
+            key: tp('PatternHeight'), // '定位点柱体高度',
             default: 0.5,
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '上侧颜色',
+            key: tp('TopColor'), //'上侧颜色',
             default: '#FF7F89'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '左侧颜色',
+            key: tp('RightColor'), //'右侧颜色',
             default: '#FFD7D9'
         },
         {
             type: ParamTypes.COLOR_EDITOR,
-            key: '右侧颜色',
+            key: tp('LeftColor'), //'左侧颜色',
             default: '#FFEBF3'
         },
     ];

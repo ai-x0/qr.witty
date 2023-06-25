@@ -1,16 +1,43 @@
-import React from "react";
-import '../Qrcode.css';
+import React, { useEffect, useState } from "react";
+import _ from "lodash";
+import axios from "axios";
+import "../Qrcode.css";
 import InputText from "../../containers/app/InputText";
 import QrbtfLogo from "../svg/QrbtfLogo";
+import { useTranslation } from "react-i18next";
 
-const PartHeader = () => (
-    <div className="Qr-Centered">
-        <div>
-            <h1 className="Qr-title"><QrbtfLogo className="Qr-title-svg" /></h1>
-        </div>
-        <p className="Qr-subtitle">参数化二维码生成器{/* <sup className="Gray">测试版</sup>*/}</p>
-        <InputText/>
+import "./partheader.scss";
+
+const PartHeader = ({ qrSrc, imgList = [], onToggle, isExpand } = {}) => {
+  const { t } = useTranslation();
+
+  return (
+    <div
+      className="Qr-Centered Qrbox"
+      style={{ width: 1200, display: "flex", flexDirection: "row" }}
+    >
+      <div className="qrbox-sidecontent" style={{ width: 800 }}>
+        <p className="Qr-subtitle head-title">
+          <img src={require("../../assets/images/icon_qrcontent.png")} alt="" />
+          {t("page.qrContent")}
+
+          <div className="title-right">
+            <div
+              className={`togglebox ${isExpand ? "expand" : ""}`}
+              onClick={onToggle}
+            >
+              {isExpand ? t("page.collapse") : t("page.expand")}
+              <img
+                src={require("../../assets/images/icon_header_more.png")}
+                alt=""
+              />
+            </div>
+          </div>
+        </p>
+        <InputText />
+      </div>
     </div>
-)
+  );
+};
 
-export default PartHeader
+export default PartHeader;

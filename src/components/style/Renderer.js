@@ -13,7 +13,7 @@ let defaultViewBox = function (qrcode) {
     if (!qrcode) return '0 0 0 0';
 
     const nCount = qrcode.getModuleCount();
-    return String(-nCount / 5) + ' ' + String(-nCount / 5) + ' ' + String(nCount + nCount / 5 * 2) + ' ' + String(nCount + nCount / 5 * 2);
+    return String(-nCount / 40) + ' ' + String(-nCount / 40) + ' ' + String(nCount + nCount / 40 * 2) + ' ' + String(nCount + nCount / 40 * 2);
 }
 
 let defaultDrawIcon = function ({ qrcode, params, title, icon }) {

@@ -25,7 +25,7 @@ export function getParamDetailedValue(item, paramValue) {
 }
 
 export function outerHtml(selectedIndex) {
-    return document.getElementsByClassName('Qr-item-svg')[selectedIndex].outerHTML;
+    return document.getElementsByClassName('Qr-item-svg')[selectedIndex]?.outerHTML;
 }
 
 export function getExactValue(value, defaultValue) {

@@ -1,0 +1,141 @@
+@media screen and (max-width: 500px) {
+  #root {
+    .App-header {
+      .Qrbox {
+        width: 100vw !important;
+
+        .qrbox-sidecontent {
+          width: 100% !important;
+          user-select: none;
+
+          .txt-qrinput {
+            width: calc(100vw - 20px) !important;
+            margin-left: 10px;
+            box-sizing: border-box;
+          }
+        }
+
+        .togglebox {
+          padding-right: 10px;
+        }
+      }
+
+      .expandbox {
+        width: 100vw !important;
+
+        .stylebox {
+          width: 100vw !important;
+          .Qr-s {
+            width: 100vw !important;
+          }
+        }
+
+        .Qr-box {
+          width: calc(100vw - 20px) !important;
+
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          .Qr-item {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .dashed-line {
+        width: calc(100vw - 20px) !important;
+        margin-left: 10px;
+      }
+
+      .Qr-div-table {
+        width: calc(100vw - 20px) !important;
+        margin-left: 10px;
+
+        .dbtformitem {
+          width: 100%;
+
+          .Qr-input.small-input {
+            color: #000;
+          }
+        }
+      }
+
+      .head-title {
+        width: 100vw;
+        justify-content: flex-start;
+        > img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .txt-qrinput {
+        margin-top: 10px;
+        margin-bottom: 25px;
+      }
+
+      .title-margin {
+        margin-bottom: 10px;
+      }
+    }
+
+    .promptbox {
+      width: 100vw;
+      padding-top: 10px;
+
+      &-title {
+        margin-bottom: 10px;
+      }
+
+      &-inner {
+        width: 100vw !important;
+
+        textarea {
+          width: calc(100vw - 20px) !important;
+          margin-left: 10px;
+          color: #000;
+        }
+
+        button.btn-generate {
+          margin: 20px auto 0;
+          width: 80vw;
+        }
+      }
+    }
+
+    .previewbox {
+      width: 100vw;
+
+      margin-right: 0;
+
+      height: auto;
+      position: static;
+      top: 0;
+      float: none;
+
+      .qrcodeimg {
+        margin-top: 0;
+        width: 90%;
+        height: auto;
+      }
+
+      .btn-down {
+        text-align: center;
+        width: 100vw;
+        margin-top: -10px;
+        margin-bottom: -10px;
+      }
+
+      .smallimgbox {
+        padding: 0 10px;
+        box-sizing: border-box;
+        .smallitem {
+          width: 16vw;
+          height: 16vw;
+        }
+      }
+    }
+  }
+}
