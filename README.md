@@ -1,7 +1,7 @@
 <h1 align="center"><img alt="QRBTF" src=".github/qrbtf-logo.svg" height="75"></h1>
 
 <p align="center">
-    URL: <a href="https://qr.witty-ai.io/" rel="noopener noreferrer" target="_blank">qrbtf.com</a><br />
+    URL: <a href="https://qr.witty-ai.io/" rel="noopener noreferrer" target="_blank">qr.witty-ai.io</a><br />
     QRBTF is a simple web app to beautify your QR code.
 </p>
 
