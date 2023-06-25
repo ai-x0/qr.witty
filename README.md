@@ -2,7 +2,7 @@
 
 <p align="center">
     URL: <a href="https://qr.witty-ai.io/" rel="noopener noreferrer" target="_blank">qr.witty-ai.io</a><br />
-    QRBTF is a simple web app to beautify your QR code.
+    qr.witty-ai.io is a simple web app to beautify your QR code.
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
 * [QRBTF 开源啦！来写个二维码样式吧～](https://mp.weixin.qq.com/s/GFEMCWQu3e2qhTuBabnHmQ)
 * 本项目基于：https://github.com/ciaochaos/qrbtf 开发
 
-## QRBTF Website
+## qr.witty-ai.io Website
 
 ### Installation
 
