@@ -1,4 +1,4 @@
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<svg width="1140" height="1024" xmlns="http://www.w3.org/2000/svg">
  <defs>
   <filter id="svg_1_blur">
    <feGaussianBlur stdDeviation="0" in="SourceGraphic"/>
@@ -6,6 +6,6 @@
  </defs>
  <g>
   <title>Layer 1</title>
-  <text filter="url(#svg_1_blur)" transform="matrix(1 0 0 1 0 0)" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="274" id="svg_1" y="329.5" x="181.82813" stroke-width="0" stroke="#000" fill="#000000">qr.witty-ai.io</text>
+  <text transform="matrix(1 0 0 1 0 0)" filter="url(#svg_1_blur)" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="160" id="svg_1" y="575.5" x="98.28125" stroke-width="0" stroke="#000" fill="#000000">qr.witty-ai.io</text>
  </g>
 </svg>
