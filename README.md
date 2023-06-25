@@ -1,4 +1,4 @@
-<h1 align="center"><img alt="QRBTF" src=".github/qrbtf-logo.svg" height="75"></h1>
+<h1 align="center"><img alt="qr.witty-ai.io" src=".github/qrbtf-logo.svg" height="75"></h1>
 
 <p align="center">
     URL: <a href="https://qr.witty-ai.io/" rel="noopener noreferrer" target="_blank">qr.witty-ai.io</a><br />
