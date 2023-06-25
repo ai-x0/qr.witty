@@ -1,7 +1,7 @@
 <h1 align="center"><img alt="QRBTF" src=".github/qrbtf-logo.svg" height="75"></h1>
 
 <p align="center">
-    URL: <a href="https://qrbtf.com" rel="noopener noreferrer" target="_blank">qrbtf.com</a><br />
+    URL: <a href="https://qr.witty-ai.io/" rel="noopener noreferrer" target="_blank">qrbtf.com</a><br />
     QRBTF is a simple web app to beautify your QR code.
 </p>
 
@@ -26,7 +26,7 @@
 ### Installation
 
 ``` bash
-git clone https://github.com/ciaochaos/qrbtf.git
+git clone https://github.com/ai-x0/qrbtf.git
 cd qrbtf
 npm install
 npm start
@@ -34,7 +34,7 @@ npm start
 
 ### Usage
 
-1. Open [qrbtf.com](https://qrbtf.com).
+1. Open [qr.witty-ai](https://qr.witty-ai.io/).
 2. Enter a URL or text.
 3. Select a style.
 4. Adjust parameters.
