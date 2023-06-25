@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-    <img src="public/img/QRcodes.jpg">
+    <img align="center" src="https://qr.witty-ai.io/static/media/img_banner_qr.60b3a7cd.png" width="300">
 </p>
 
 ## Features
@@ -20,6 +20,7 @@
 
 * [如何制作一个漂亮的二维码](https://mp.weixin.qq.com/s/_Oy9I9FqPXhfwN9IUhf6_g)
 * [QRBTF 开源啦！来写个二维码样式吧～](https://mp.weixin.qq.com/s/GFEMCWQu3e2qhTuBabnHmQ)
+* 本项目基于：https://github.com/ciaochaos/qrbtf 开发
 
 ## QRBTF Website
 
@@ -79,19 +80,8 @@ class Component extends React.Component {
 * [gexin1 / beautify-qrcode](https://github.com/gexin1/beautify-qrcode)
 
 ## Author
-
 * [ciaochaos](https://github.com/ciaochaos)
 * [CPunisher](https://github.com/CPunisher)
-
-## Donation
-
-#### Paypal
-
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.me/ciaochaos)
-
-#### Alipay
-
-<img align="center" src="https://qr.witty-ai.io/static/media/img_banner_qr.60b3a7cd.png" width="300">
 
 ## Dependency
 
